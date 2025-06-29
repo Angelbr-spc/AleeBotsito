@@ -14,21 +14,7 @@ https://wa.me/573206095607?text=.Adquirir
 
 𝙏𝙖𝙢𝙗𝙞𝙚𝙣 𝙨𝙚 𝙝𝙖𝙘𝙚𝙣 𝙗𝙤𝙩𝙨 𝙥𝙚𝙧𝙨𝙤𝙣𝙖𝙡𝙞𝙯𝙖𝙙𝙤𝙨 🤖🖌️!`;
 
-    await conn.sendMessage(m.chat, {
-      text: mensaje,
-      contextInfo: {
-        externalAdReply: {
-          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲',
-          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲',
-          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
-          sourceUrl: '',
-          mediaType: 1,
-          renderLargerThumbnail: false,
-          showAdAttribution: false
-        }
-      }
-    });
-
+    await conn.sendMessage(m.chat, { text: mensaje });
     await conn.updateBlockStatus(m.chat, 'block');
     console.log(`Usuario ${m.sender} bloqueado por contacto privado.`);
   }
