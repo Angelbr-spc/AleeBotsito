@@ -9,7 +9,7 @@ let handler = async (m, { conn, isAdmin, isROwner }) => {
         title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 ',
         body: '𝐀𝐥𝐞𝐞 𝐁𝐨𝐭 ',
         mediaType: 1,
-        thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+        thumbnailUrl: 'https://qu.ax/FxpUy.jpg',
         renderLargerThumbnail: false,
         sourceUrl: ''
       }
