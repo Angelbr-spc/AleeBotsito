@@ -1,15 +1,21 @@
+export async function before(m, { conn, isOwner, isROwner }) {
+  if (m.isBaileys && m.fromMe) return true;
+  if (m.isGroup) return false;
+  if (!m.message) return true;
 
-export async function before(m, { conn, isOwner, isROwner}) {
-    if (m.isBaileys && m.fromMe) return true;
-    if (m.isGroup) return false;
-    if (!m.message) return true;
+  const botSettings = global.db.data.settings[this.user.jid] || {};
 
-    const botSettings = global.db.data.settings[this.user.jid] || {};
+  if (botSettings.antiPrivate && !isOwner && !isROwner) {
+    await conn.reply(m.chat, '𝙃𝙤𝙡𝙖 👋, 𝙎𝙤𝙮 𝘼𝙡𝙚𝙚𝘽𝙤𝙩 🤖!
+•𝙀𝙨𝙩𝙖 𝙋𝙧𝙤𝙝𝙞𝙗𝙞𝙙𝙤 𝙀𝙨𝙘𝙧𝙞𝙗𝙞𝙧𝙢𝙚 𝘼𝙡 𝙋𝙧𝙞𝙫𝙖𝙙𝙤 🚫.
+𝙎𝙞 𝘿𝙚𝙨𝙚𝙖𝙨 𝘼𝙙𝙦𝙪𝙞𝙧𝙞𝙧 𝘼𝙡𝙚𝙚𝘽𝙤𝙩 🤖, 𝙈𝙚𝙣𝙨𝙪𝙖𝙡𝙢𝙚𝙣𝙩𝙚 𝙤 𝙥𝙚𝙧𝙢𝙖𝙣𝙚𝙣𝙩𝙚𝙢𝙚𝙣𝙩𝙚 𝙡𝙤 𝙥𝙪𝙚𝙙𝙚𝙨 𝙝𝙖𝙘𝙚𝙧𝙡𝙤 𝙖𝙡 ✅: 
 
-    if (botSettings.antiPrivate &&!isOwner &&!isROwner) {
-        await conn.updateBlockStatus(m.chat, 'block'); // Bloquea al usuario sin enviar mensaje
-        console.log(`Usuario ${m.sender} bloqueado por contacto privado.`);
-}
+https://wa.me/573206095607?text=.Adquirir
 
-    return false;
+𝙏𝙖𝙢𝙗𝙞𝙚𝙣 𝙨𝙚 𝙝𝙖𝙘𝙚𝙣 𝙗𝙤𝙩𝙨 𝙥𝙚𝙧𝙨𝙤𝙣𝙖𝙡𝙞𝙯𝙖𝙙𝙤𝙨 🤖🖌️!.', m);
+    await conn.updateBlockStatus(m.chat, 'block');
+    console.log(`Usuario ${m.sender} bloqueado por contacto privado.`);
+  }
+
+  return false;
 }
