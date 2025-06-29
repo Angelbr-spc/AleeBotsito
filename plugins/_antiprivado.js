@@ -6,15 +6,28 @@ export async function before(m, { conn, isOwner, isROwner }) {
   const botSettings = global.db.data.settings[this.user.jid] || {};
 
   if (botSettings.antiPrivate && !isOwner && !isROwner) {
-    const mensaje = `𝙃𝙤𝙡𝙖 👋, 𝙎𝙤𝙮 𝘼𝙡𝙚𝙚𝘽𝙤𝙩 🤖!
-•𝙀𝙨𝙩𝙖 𝙋𝙧𝙤𝙝𝙞𝙗𝙞𝙙𝙤 𝙀𝙨𝙘𝙧𝙞𝙗𝙞𝙧𝙢𝙚 𝘼𝙡 𝙋𝙧𝙞𝙫𝙖𝙙𝙤 🚫.
-𝙎𝙞 𝘿𝙚𝙨𝙚𝙖𝙨 𝘼𝙙𝙦𝙪𝙞𝙧𝙞𝙧 𝘼𝙡𝙚𝙚𝘽𝙤𝙩 🤖, 𝙈𝙚𝙣𝙨𝙪𝙖𝙡𝙢𝙚𝙣𝙩𝙚 𝙤 𝙥𝙚𝙧𝙢𝙖𝙣𝙚𝙣𝙩𝙚𝙢𝙚𝙣𝙩𝙚 𝙡𝙤 𝙥𝙪𝙚𝙙𝙚𝙨 𝙝𝙖𝙘𝙚𝙧𝙡𝙤 𝙖𝙡 ✅: 
+    const mensaje = `
+*Hola 👋, Soy AleeBot 🤖!*
+
+• *Está Prohibido Escribirme Al Privado 🚫.*
+
+Si Deseas *Adquirir AleeBot 🤖*, Mensualmente o Permanentemente lo puedes hacer al ✅:
 
 https://wa.me/573206095607?text=.Adquirir
 
-𝙏𝙖𝙢𝙗𝙞𝙚𝙣 𝙨𝙚 𝙝𝙖𝙘𝙚𝙣 𝙗𝙤𝙩𝙨 𝙥𝙚𝙧𝙨𝙤𝙣𝙖𝙡𝙞𝙯𝙖𝙙𝙤𝙨 🤖🖌️!`;
+*También se hacen bots personalizados 🤖🖌️!*
+`.trim();
 
-    await conn.sendMessage(m.chat, { text: mensaje });
+    // Envía el mensaje sin vista previa
+    await conn.sendMessage(m.chat, {
+      text: mensaje,
+      linkPreview: false
+    });
+
+    // Espera un par de segundos antes de bloquear (opcional)
+    await conn.delay(1500);
+
+    // Bloquea al usuario
     await conn.updateBlockStatus(m.chat, 'block');
     console.log(`Usuario ${m.sender} bloqueado por contacto privado.`);
   }
