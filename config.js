@@ -10,7 +10,7 @@ import axios from 'axios'
 
   global.owner = [
   [ '5217227584934', 'Angel OFC', true ],
-  [ '50577688033', 'Goku', true ],
+  [ '573206095607', 'Alee', true ],
   [ '584146277368', 'Willzek', true ],
   [ '5212431268546', "I'm Fz ~", true ],
   [ '24580450156657', true ],
