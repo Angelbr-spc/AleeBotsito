@@ -18,9 +18,9 @@ https://wa.me/573206095607?text=.Adquirir
       text: mensaje,
       contextInfo: {
         externalAdReply: {
-          title: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲',
-          body: '𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲',
-          thumbnailUrl: 'https://qu.ax/JRCMQ.jpg',
+          title: '𝐁𝐨𝐭 𝐁𝐲 𝐀𝐥𝐞𝐞 👑',
+          body: '𝐁𝐨𝐭 𝐁𝐲 𝐀𝐥𝐞𝐞 👑',
+          thumbnailUrl: 'https://qu.ax/FxpUy.jpg',
           sourceUrl: '',
           mediaType: 1,
           renderLargerThumbnail: false,
