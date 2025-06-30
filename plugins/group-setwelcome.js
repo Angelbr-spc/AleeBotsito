@@ -1,17 +1,16 @@
-let handler = async (m, { conn, text, isROwner, isOwner }) => {
+let handler = async (m, { conn, text }) => {
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 
 if (text) {
-global.db.data.chats[m.chat].sWelcome = text
-conn.reply(m.chat, '_*LA BIENVENIDA DEL GRUPO HA SIDO CONFIGURADA*_', fkontak, m)
-
+global.db.data.chats[m.chat].sBye = text
+conn.reply(m.chat, '_*MENSAJE DE DESPEDIDA CONFIGURADO*_', fkontak, m)
 } else {
-    conn.reply(m.chat, `*_ESCRIBE EL MENSAJE DE BIENVENIDA_*\n*_OPCIONAL PUEDE USAR LO QUE ESTA CON "@" PARA AGREGAR MÁS INFORMACIÓN:_*\n\n*⚡ @user (Mención al usuario(a))*\n*⚡ @group (Nombre de grupo)*\n*⚡ @desc (Description de grupo)*\n\n*RECUERDE QUE LOS "@" SON OPCIONALES*`, m)
+conn.reply(m.chat, `*_ESCRIBE EL MENSAJE DE DESPEDIDA_*\n\n*⚡ @user (Usuario que sale o es expulsado)*\n*⚡ @group (Nombre del grupo)*\n*⚡ @desc (Descripción del grupo)*`, m)
 }
 }
-handler.help = ['setwelcome @user + texto']
+handler.help = ['setbye @user + texto']
 handler.tags = ['group']
-handler.command = ['setwelcome', 'bienvenida'] 
+handler.command = ['setbye'] 
 handler.botAdmin = true
 handler.admin = true
 handler.group = true
