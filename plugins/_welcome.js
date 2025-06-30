@@ -8,7 +8,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     let chat = global.db?.data?.chats?.[m.chat];
     if (!chat || !chat.bienvenida) return true;
 
-    const botName = "🔥 𝐀𝐧𝐠𝐞𝐥 Bot 🔥";
+    const botName = "𝐀𝐥𝐞𝐞 𝐁𝐨𝐭 👑";
     const user = `@${m.messageStubParameters[0].split("@")[0]}`;
     const groupName = groupMetadata.subject;
     const groupDesc = groupMetadata.desc || "🌎 Sin descripción";
