@@ -480,7 +480,7 @@ global.dfail = (type, m, conn, usedPrefix) => {
                 title: '𝐁𝐨𝐭 𝐁𝐲 𝐀𝐥𝐞𝐞 👑',
                 body: '𝐁𝐨𝐭 𝐁𝐲 𝐀𝐥𝐞𝐞 👑',
                 mediaType: 1,
-                thumbnailUrl: 'https://files.catbox.moe/ntyp5r.jpg',
+                thumbnailUrl: 'https://qu.ax/FxpUy.jpg',
                 renderLargerThumbnail: false,
                 sourceUrl: ''
             }
